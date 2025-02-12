@@ -1,4 +1,4 @@
-#Assignment 01
+# Assignment 01
 
 This assignment involves running shell commands, writing scripts, and processing data with Python.
 
@@ -10,9 +10,9 @@ root/ ├── _output/ │ ├── os.txt │ ├── cpu.txt │ ├─�
 
 #Tasks Overview
 This project consists of three main tasks:
-1️⃣ *Collecting system information using shell commands*
-2️⃣ *Writing a shell script to count occurrences of "Python" in StackOverflow data*
-3️⃣ *Writing a Python script to count occurrences of "GitHub" in StackOverflow data*
+1️⃣, Collecting system information using shell commands
+2️⃣, Witing a shell script to count occurrences of "Python" in StackOverflow data
+3️⃣, Witing a Python script to count occurrences of "GitHub" in StackOverflow data
 
 Each task is detailed below.
 
@@ -32,7 +32,7 @@ These files are stored in the _output/ folder.
 
 ---
 
-# Task 2: Count "Python" Mentions
+#Task 2: Count "Python" Mentions
 A shell script (count_python.sh) was created to count how many times the word "Python" appears in StackOverflow dataset CSV files.
 
 How to Run:
