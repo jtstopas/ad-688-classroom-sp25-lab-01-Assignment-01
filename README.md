@@ -10,9 +10,9 @@ root/ ├── _output/ │ ├── os.txt │ ├── cpu.txt │ ├─�
 
 #Tasks Overview
 This project consists of three main tasks:
-1️⃣ *Collecting system information using shell commands**
-2️⃣ *Writing a shell script to count occurrences of "Python" in StackOverflow data**
-3️⃣ *Writing a Python script to count occurrences of "GitHub" in StackOverflow data**
+1️⃣ *Collecting system information using shell commands*
+2️⃣ *Writing a shell script to count occurrences of "Python" in StackOverflow data*
+3️⃣ *Writing a Python script to count occurrences of "GitHub" in StackOverflow data*
 
 Each task is detailed below.
 
@@ -22,14 +22,15 @@ Each task is detailed below.
 The first task involves gathering information about the system and installed software.
 The following commands were executed to generate system reports:
 
-```bash
-cat /etc/os-release > _output/os.txt     # Get OS details
-lscpu > _output/cpu.txt                 # Get CPU details
-lsmem > _output/mem.txt                  # Get memory details
-pip3 --version > _output/pip3.txt        # Check installed pip3 version
-jupyter --version > _output/jupyter.txt  # Check installed Jupyter version
+cat /etc/os-release > _output/os.txt
+lscpu > _output/cpu.txt
+lsmem > _output/mem.txt
+pip3 --version > _output/pip3.txt
+jupyter --version > _output/jupyter.txt
 
 These files are stored in the _output/ folder.
+
+---
 
 # Task 2: Count "Python" Mentions
 A shell script (count_python.sh) was created to count how many times the word "Python" appears in StackOverflow dataset CSV files.
@@ -37,11 +38,15 @@ A shell script (count_python.sh) was created to count how many times the word "P
 How to Run:
 ./_output/count_python.sh
 
+---
+
 #Task 3: Count "GitHub" Mentions
 A Python script (count_github.py) was created to count how many times the word "GitHub" appears in the dataset.
 
 How to Run:
 python3 _output/count_github.py
+
+---
 
 Author
 Name: Jason Stopas
