@@ -7,15 +7,25 @@
 </head>
 <body>
     <h1>Count Python Script</h1>
-    
+
     <h2>Script:</h2>
     <pre>
-        <?php echo htmlspecialchars(file_get_contents("_output/count_python.sh")); ?>
+#!/bin/bash
+
+# Define the correct directory
+DATA_DIR=~/ad-688-classroom-sp25-lab-01-Assignment-01
+
+# Count occurrences of "python" in all CSV files (case insensitive)
+count=$(grep -i "python" $DATA_DIR/*.csv | wc -l)
+
+# Print the result
+echo "Total lines containing 'python': $count"
     </pre>
 
     <h2>Execution Output:</h2>
     <pre>
-        <?php echo shell_exec("bash _output/count_python.sh 2>&1"); ?>
+Total lines containing 'python': 
+<!-- result from count_python_result.txt -->
     </pre>
 </body>
 </html>
