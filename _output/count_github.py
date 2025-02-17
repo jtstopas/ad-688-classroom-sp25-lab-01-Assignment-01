@@ -1,19 +1,23 @@
+import os
 import pandas as pd
-import glob
 
-files = glob.glob("*.csv")
+DATA_DIR = "/home/ubuntu/ad-688-classroom-sp25-lab-01-Assignment-01"
+csv_files = ["questions.csv", "question_tags.csv"]
 
-github_count = 0
+count = 0
+chunk_size = 50000
 
-for file in files:
+
+def contains_github(chunk):
+    text_columns = chunk.select_dtypes(include=["object"])
+    return text_columns.apply(lambda col: col.str.contains("GitHub", case=False, na=False)).any(axis=1).sum()
+
+for file in csv_files:
+    file_path = os.path.join(DATA_DIR, file)
     try:
-        print(f"Processing {file}...")
-        df = pd.read_csv(file, encoding='utf-8', on_bad_lines='skip')
-
-        count = df.apply(lambda row: row.astype(str).str.contains("GitHub", case=False, na=False).any(), axis=1).sum()
-        github_count += count
+        for chunk in pd.read_csv(file_path, encoding='utf-8', on_bad_lines='skip', chunksize=chunk_size, low_memory=True):
+            count += contains_github(chunk)
     except Exception as e:
-        print(f"Error processing {file}: {e}")
+        print(f"Error reading {file}: {e}")
 
-print(f"Total lines containing 'GitHub': {github_count}")
-
+print(f"Total lines containing 'GitHub': {count}")
