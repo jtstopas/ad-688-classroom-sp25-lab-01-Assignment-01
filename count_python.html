@@ -7,10 +7,15 @@
 </head>
 <body>
     <h1>Count Python Script</h1>
+    
+    <h2>Script:</h2>
     <pre>
-        <?php
-        echo htmlspecialchars(file_get_contents("count_python.sh"));
-        ?>
+        <?php echo htmlspecialchars(file_get_contents("_output/count_python.sh")); ?>
+    </pre>
+
+    <h2>Execution Output:</h2>
+    <pre>
+        <?php echo shell_exec("bash _output/count_python.sh 2>&1"); ?>
     </pre>
 </body>
 </html>

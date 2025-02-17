@@ -7,10 +7,15 @@
 </head>
 <body>
     <h1>Count GitHub Python Script</h1>
+
+    <h2>Script:</h2>
     <pre>
-        <?php
-        echo htmlspecialchars(file_get_contents("count_github.py"));
-        ?>
+        <?php echo htmlspecialchars(file_get_contents("_output/count_github.py")); ?>
+    </pre>
+
+    <h2>Execution Output:</h2>
+    <pre>
+        <?php echo shell_exec("python3 _output/count_github.py 2>&1"); ?>
     </pre>
 </body>
 </html>
